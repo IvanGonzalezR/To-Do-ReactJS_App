@@ -6,7 +6,7 @@ import { TodoItem } from '../TodoItem';
 import { CreateTodoButton } from '../CreateTodoButton';
 
 function AppUI( { totalTodos, completedTodos, searchValue, setSearchValue,
-                  searchedTodos, completeTodo, deleteTodo } ){
+                  searchedTodos, completeTodo, deleteTodo, loading, error } ){
    return (
       <>
       <TodoCounter 
@@ -20,6 +20,10 @@ function AppUI( { totalTodos, completedTodos, searchValue, setSearchValue,
       />
 
       <TodoList>
+        {error && <p>Hubo un error...</p>}
+        {loading && <p>Loading...</p>}
+        {(!loading && !searchedTodos.length) && <p>Crea tu primer Todo! :D</p>}
+
         {
           searchedTodos.length === 0 
           ?
