@@ -4,14 +4,14 @@ import './CreateTodoButton.css';
 function CreateTodoButton(props){
 
    const onClickButton = (msg) => {
-      alert(msg);
+      props.setOpenModal(!props.openModal);
    }
 
    return (
       <>
          <button 
             className='CreateTodoButton'
-            onClick={ () => onClickButton('Aqui se abre el modal') }
+            onClick={onClickButton}
          >
          +
          </button>
