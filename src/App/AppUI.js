@@ -35,12 +35,12 @@ function AppUI(){
             <MyLoader/>
             <MyLoader/>
         </>}
-        {(!loading && !searchedTodos.length) && <p>Crea tu primer Todo! :D</p>}
+        {/* {(!loading && !searchedTodos.length) && <p>Crea tu primer Todo! :D</p>} */}
 
         {
           searchedTodos.length === 0 
           ?
-          <p className="TodoCounter">No hay TODOs</p> 
+          <p className="TodoCounter">Aun no hay TODOs</p> 
           :
           searchedTodos.map(todo => ( 
             <TodoItem 
