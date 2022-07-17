@@ -10,7 +10,7 @@ function TodoCounter() {
    return (
       <>
          <h2 className="TodoCounter">
-            Has completado {completed} de {total} TODOs
+            Has completado {completed} de {total} TODO's
          </h2>
       </>
    );

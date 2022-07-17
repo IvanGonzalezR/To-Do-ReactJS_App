@@ -4,8 +4,10 @@ import { TodoContext } from '../TodoContext';
 import { TodoSearch } from '../TodoSearch';
 import { TodoList } from '../TodoList';
 import { TodoItem } from '../TodoItem';
+import { TodoForm } from '../TodoForm';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { Modal } from '../Modal';
+import { MyLoader } from '../ContentLoader';
 
 function AppUI(){
 
@@ -26,7 +28,13 @@ function AppUI(){
 
       <TodoList>
         {error && <p>Hubo un error...</p>}
-        {loading && <p>Loading...</p>}
+        {loading && <>
+            <p/><p/>
+            <MyLoader/> 
+            <MyLoader/> 
+            <MyLoader/>
+            <MyLoader/>
+        </>}
         {(!loading && !searchedTodos.length) && <p>Crea tu primer Todo! :D</p>}
 
         {
@@ -48,7 +56,7 @@ function AppUI(){
 
       {!!openModal && (
         <Modal>
-        <p>{searchedTodos[0]?.text}</p>
+          <TodoForm />
         </Modal>
       )}
 
