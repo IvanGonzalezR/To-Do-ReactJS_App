@@ -1,3 +1,5 @@
+## The app is already deployed at -> https://ivangonzalezr.github.io/platzi-Curso_de_Introduccion_React.JS/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
