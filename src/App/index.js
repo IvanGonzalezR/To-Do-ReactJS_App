@@ -27,6 +27,7 @@ function App(props) {
             searchValue,
             setSearchValue,
             addTodo, 
+            synchronizeTodos
         } = useTodos();
 
   return (
@@ -53,13 +54,13 @@ function App(props) {
         searchText={searchValue}
         onError={() => <p>Hubo un error...</p>}
         onLoading={() => 
-        <>
-            <p/><p/>
-            <MyLoader/> 
-            <MyLoader/> 
-            <MyLoader/>
-            <MyLoader/>
-        </>
+          <>
+              <p/><p/>
+              <MyLoader/> 
+              <MyLoader/> 
+              <MyLoader/>
+              <MyLoader/>
+          </>
         }
         onEmptyTodos={() => <p>Crea tu primer TODO</p>}
         onEmptySearchResults={(searchText) => <p>No hay resultados para {searchText}</p>}
@@ -99,7 +100,7 @@ function App(props) {
         openModal={openModal}
       />
 
-      <ChangeAlertWithStorageListener />
+      <ChangeAlertWithStorageListener synchronizeTodos={synchronizeTodos}/>
     </>
    );
 }

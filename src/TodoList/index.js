@@ -4,6 +4,7 @@ import './TodoList.css';
 function TodoList(props){
 
    const renderFunc = props.children || props.render;
+   let s = props.searchedTodos;
 
    return (
       <>
