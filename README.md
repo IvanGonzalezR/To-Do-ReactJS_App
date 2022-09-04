@@ -1,4 +1,4 @@
-## The app is already deployed at -> https://ivangonzalezr.github.io/platzi-Curso_de_Introduccion_React.JS/
+## The app is already deployed at -> https://ivangonzalezr.github.io/To-Do-ReactJS_App/
 
 # Getting Started with Create React App
 
