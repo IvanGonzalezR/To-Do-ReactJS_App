@@ -15,20 +15,30 @@ import './App.css';
 
 
 function App(props) {
-  const {   error, 
-            loading, 
-            searchedTodos, 
-            completeTodo,
-            deleteTodo,
-            openModal,
-            setOpenModal,
-            completedTodos,
-            totalTodos,
-            searchValue,
-            setSearchValue,
-            addTodo, 
-            synchronizeTodos
-        } = useTodos();
+
+  const {
+    states,
+    stateUpdaters,
+  } = useTodos();
+
+  const {
+    error, 
+    loading, 
+    searchedTodos, 
+    totalTodos,
+    completedTodos,
+    completeTodo,
+    openModal,
+    searchValue,
+  } = states;
+
+  const {
+    deleteTodo,   
+    setOpenModal,
+    setSearchValue,
+    addTodo, 
+    synchronizeTodos
+  } = stateUpdaters;
 
   return (
     <>
