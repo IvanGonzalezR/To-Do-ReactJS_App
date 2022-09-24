@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/platzi-Curso_de_Introduccion_React.JS/static/css/main.89e40ef0.css",
-    "main.js": "/platzi-Curso_de_Introduccion_React.JS/static/js/main.2d4d4ed5.js",
-    "index.html": "/platzi-Curso_de_Introduccion_React.JS/index.html",
-    "main.89e40ef0.css.map": "/platzi-Curso_de_Introduccion_React.JS/static/css/main.89e40ef0.css.map",
-    "main.2d4d4ed5.js.map": "/platzi-Curso_de_Introduccion_React.JS/static/js/main.2d4d4ed5.js.map"
+    "main.css": "/introduccion_react_js/static/css/main.ca7b1c55.css",
+    "main.js": "/introduccion_react_js/static/js/main.e11aa3b2.js",
+    "index.html": "/introduccion_react_js/index.html",
+    "main.ca7b1c55.css.map": "/introduccion_react_js/static/css/main.ca7b1c55.css.map",
+    "main.e11aa3b2.js.map": "/introduccion_react_js/static/js/main.e11aa3b2.js.map"
   },
   "entrypoints": [
-    "static/css/main.89e40ef0.css",
-    "static/js/main.2d4d4ed5.js"
+    "static/css/main.ca7b1c55.css",
+    "static/js/main.e11aa3b2.js"
   ]
 }
