@@ -1,19 +1,15 @@
 import React from 'react';
 import './CreateTodoButton.css';
 
-function CreateTodoButton(props){
-
-   const onClickButton = (msg) => {
-      props.setOpenModal(!props.openModal);
-   }
+function CreateTodoButton(props) {
 
    return (
       <>
-         <button 
+         <button
             className='CreateTodoButton'
-            onClick={onClickButton}
+            onClick={props.onClick}
          >
-         +
+            +
          </button>
       </>
    )

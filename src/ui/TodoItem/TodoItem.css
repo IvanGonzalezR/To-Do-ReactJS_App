@@ -45,7 +45,22 @@
   position: absolute;
   top: -24px;
   right: 0;
+  opacity: 0.8;
 }
 .Icon-delete:hover {
-  color: red;
+  opacity: 1;
+}
+
+#edit{
+  height: 40px;
+  width: 40px;
+}
+.Icon-edit {
+  position: absolute;
+  top: -24px;
+  right: 50px;
+  opacity: 0.8;
+}
+.Icon-edit:hover {
+  opacity: 1;
 }

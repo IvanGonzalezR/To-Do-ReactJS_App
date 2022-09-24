@@ -3,12 +3,12 @@ import React from "react";
 // Custom React Hook
 function useLocalStorage(itemName, initialValue) {
 
-  const [state, dispatch] = React.useReducer(reducer, initialState({initialValue}));
-  const { 
-      item,
-      loading,
-      error, 
-      synchronizedItem,
+  const [ state, dispatch ] = React.useReducer(reducer, initialState({ initialValue }));
+  const {
+    item,
+    loading,
+    error,
+    synchronizedItem,
   } = state;
 
   // const [item, setItem] = React.useState(initialValue);
@@ -17,12 +17,15 @@ function useLocalStorage(itemName, initialValue) {
   // const [synchronizedItem, setSynchronizedItem] = React.useState(true);
 
   //ACTION CREATORS
-  const onError = (item) => dispatch({ type: actionTypes.error, payload: item });
-  const onSuccess = (item) => dispatch({ 
+  const onError = (item) => dispatch({
+    type: actionTypes.error,
+    payload: item
+  });
+  const onSuccess = (item) => dispatch({
     type: actionTypes.success,
     payload: item
   });
-  const onSave = (item) => dispatch({ 
+  const onSave = (item) => dispatch({
     type: actionTypes.save,
     payload: item
   });
@@ -33,16 +36,16 @@ function useLocalStorage(itemName, initialValue) {
   React.useEffect(() => {
     setTimeout(() => {
       try {
-          //Obtener item de localStorage
+        //Obtener item de localStorage
         const localStorageItem = localStorage.getItem(itemName);
 
         //Si no hay ningun Todo guardado en localStorage, se crea un array vacio
-        let parsedItem; 
-        if(!localStorageItem)  {
-            localStorage.setItem(itemName, JSON.stringify(initialValue));
-            parsedItem = initialValue;
+        let parsedItem;
+        if (!localStorageItem) {
+          localStorage.setItem(itemName, JSON.stringify(initialValue));
+          parsedItem = initialValue;
         } else {
-            parsedItem = JSON.parse(localStorageItem);
+          parsedItem = JSON.parse(localStorageItem);
         }
 
         onSuccess(parsedItem);
@@ -50,7 +53,7 @@ function useLocalStorage(itemName, initialValue) {
         onError(error);
       }
     }, 1000);
-  }, [synchronizedItem]);
+  }, [ synchronizedItem ]);
 
   const synchronizeItem = () => {
     onSynchronizeItem();
@@ -67,9 +70,9 @@ function useLocalStorage(itemName, initialValue) {
   }
 
   return {
-    item, 
-    saveItem, 
-    loading, 
+    item,
+    saveItem,
+    loading,
     error,
     synchronizeItem
   };
@@ -90,22 +93,22 @@ const actionTypes = {
 };
 
 const reducerObject = (state, payload) => ({
-  [actionTypes.error]: {
+  [ actionTypes.error ]: {
     ...state,
     error: true,
   },
-  [actionTypes.success]: {
+  [ actionTypes.success ]: {
     ...state,
     loading: false,
     error: false,
     synchronizedItem: true,
     item: payload,
   },
-  [actionTypes.save]: {
+  [ actionTypes.save ]: {
     ...state,
     item: payload,
   },
-  [actionTypes.synchronizeItem]: {
+  [ actionTypes.synchronizeItem ]: {
     ...state,
     synchronizedItem: false,
     loading: true,
@@ -113,7 +116,7 @@ const reducerObject = (state, payload) => ({
 });
 
 const reducer = (state, action) => {
-  return reducerObject(state, action.payload)[action.type] || state;
+  return reducerObject(state, action.payload)[ action.type ] || state;
 };
 
 export { useLocalStorage };
