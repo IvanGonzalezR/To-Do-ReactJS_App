@@ -1,10 +1,9 @@
 import React from 'react';
 import './TodoList.css';
 
-function TodoList(props){
+function TodoList(props) {
 
    const renderFunc = props.children || props.render;
-   let s = props.searchedTodos;
 
    return (
       <>

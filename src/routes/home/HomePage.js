@@ -49,7 +49,18 @@ function HomePage(props) {
             <TodoSearch
                searchValue={searchValue}
                setSearchValue={setSearchValue}
-            // loading={loading}
+               onSearch={(isEmpty) => {
+                  if (isEmpty) {
+                     navigate('/');
+                  } else {
+                     navigate('/search=' + searchValue,
+                        {
+                           state: { searchValue }
+                        }
+                     );
+                  }
+               }}
+               loading={loading}
             />
          </TodoHeader>
 

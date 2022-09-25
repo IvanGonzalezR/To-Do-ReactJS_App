@@ -12,6 +12,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/new" element={<NewTodoPage />} />
         <Route path="/edit/:id" element={<EditTodoPage />} />
+        <Route path="/search=:searchValue" element={<HomePage />} />
         <Route path="*" element={<h1>404: Not Found</h1>} />
       </Routes>
     </HashRouter>
